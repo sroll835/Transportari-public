@@ -1,4 +1,4 @@
-package edu.eci.arsw.transportari;
+package edu.eci.arsw.transportariapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

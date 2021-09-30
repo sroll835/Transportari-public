@@ -40,3 +40,31 @@ público.
 - El real time se evidencia en la posición real del bus para poder escoger la mejor ruta.
 
 ## Historias de Usuario
+
+#### Registrar viaje
+
+COMO: Usuario del sistema <br/>
+QUIERO: Registrar un viaje dentro del sistema <br/>
+PARA QUÉ: Aparecer en el sistema como viajero activo dentro de una ruta <br/>
+
+#### Actualizar viaje
+
+COMO: Usuario del sistema <br/>
+QUIERO: Realizar cambios en mi viaje <br/>
+PARA QUÉ: Poder cambiar de destino en caso de ser necesario <br/>
+
+#### Consultar rutas de transporte
+
+COMO: Usuario del sistema <br/>
+QUIERO: Ver rutas próximas que necesito <br/>
+PARA QUÉ: Escoger la mejor ruta que brinde los tiempos de desplazamiento óptimos <br/>
+
+#### Consultar densidad de usuarios
+
+COMO: Usuario del sistema <br/>
+QUIERO: Ver la cantidad de usuarios <br/>
+PARA QUÉ: Saber la disponibilidad de asientos <br/>
+
+## Diseño Entidad-Relación
+
+![img](img/entidad-relacion.png)
