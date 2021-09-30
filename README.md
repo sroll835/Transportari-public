@@ -8,7 +8,8 @@
 
 ---
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/f0e85251df3b45d4bec535fe95f0e8ab)](https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=MichisTeam/Transportari&amp;utm_campaign=Badge_Grade)
-[![CircleCI](https://circleci.com/gh/MichisTeam/Transportari.svg?style=svg&circle-token=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)](https://circleci.com/gh/MichisTeam/Transportari)
+
+[![CircleCI](https://circleci.com/gh/MichisTeam/Transportari.svg?style=svg&circle-token=de58f232b79b20bc09b75c300769d70096ff6c35)](https://circleci.com/gh/MichisTeam/Transportari)
 
 ## Resumen
 
