@@ -1,6 +1,12 @@
 package edu.eci.arsw.transportari.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Usuario {
+
+    @Id
     private int idUsuario;
     private String nombre;
     private String apellido;
@@ -15,6 +21,10 @@ public class Usuario {
         this.correo = correo;
         Usuario = usuario;
         this.clave = clave;
+    }
+
+    public Usuario() {
+
     }
 
     public int getIdUsuario() {
