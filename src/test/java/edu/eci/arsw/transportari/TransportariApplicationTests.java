@@ -25,7 +25,7 @@ class TransportariApplicationTests {
 	@Test
 	public void crearUsuarioTest(){
 		Usuario us = new Usuario();
-		us.setIdUsuario(1);
+		us.setIdUsuario(0);
 		us.setNombre("prueba1");
 		us.setApellido("test1");
 		us.setCorreo("prueba1@gmail.com");
