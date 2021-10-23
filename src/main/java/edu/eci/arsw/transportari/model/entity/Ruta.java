@@ -1,4 +1,4 @@
-package edu.eci.arsw.transportari.model;
+package edu.eci.arsw.transportari.model.entity;
 
 public class Ruta {
     private int idRuta;

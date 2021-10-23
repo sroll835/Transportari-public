@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+<h1>funcionando</h1>
+<span th:if="${session.usuario!=null}">Bienvenido<span th:text="${session.usuario.nombre}"></span></span>
+
+<form th:action="@{/logout}" method="post">
+    <button type="submit">Salir</button>
+</form>
+</body>
+</html>

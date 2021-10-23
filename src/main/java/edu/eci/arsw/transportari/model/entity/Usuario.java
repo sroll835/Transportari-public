@@ -1,38 +1,39 @@
-package edu.eci.arsw.transportari.model;
+package edu.eci.arsw.transportari.model.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "usuarios")
 public class Usuario {
 
     @Id
-    private int idUsuario;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String nombre;
     private String apellido;
     private String correo;
-    private String Usuario;
+    private String username;
     private String clave;
 
-    public Usuario(int idUsuario, String nombre, String apellido, String correo, String usuario, String clave) {
-        this.idUsuario = idUsuario;
+    public Usuario(Long id, String nombre, String apellido, String correo, String username, String clave) {
+        this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.correo = correo;
-        Usuario = usuario;
+        this.username = username;
         this.clave = clave;
     }
 
     public Usuario() {
-
+        super();
     }
 
-    public int getIdUsuario() {
-        return idUsuario;
+    public Long getId() {
+        return id;
     }
 
-    public void setIdUsuario(int idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNombre() {
@@ -59,12 +60,12 @@ public class Usuario {
         this.correo = correo;
     }
 
-    public String getUsuario() {
-        return Usuario;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUsuario(String usuario) {
-        Usuario = usuario;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getClave() {

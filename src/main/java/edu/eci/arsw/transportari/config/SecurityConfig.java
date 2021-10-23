@@ -1,6 +1,5 @@
 package edu.eci.arsw.transportari.config;
 
-import edu.eci.arsw.transportari.services.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,28 +14,25 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    private UsuarioService usDetailsService;
-
-    @Autowired
-    private BCryptPasswordEncoder bCrypt;
+    private UserDetailsServiceImpl userDetailsService;
 
     @Bean
     public BCryptPasswordEncoder passwordEncoder(){
-        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
-        return bCryptPasswordEncoder;
+        return new BCryptPasswordEncoder();
     }
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(usDetailsService).passwordEncoder(bCrypt);
+        auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
     }
 
-    protected void configure(HttpSecurity http) throws Exception{
-        http
-                .authorizeRequests()
-                .anyRequest()
-                .authenticated()
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.authorizeRequests().antMatchers("/","/auth/**","/css/**","/js/**").permitAll().anyRequest().authenticated()
                 .and()
-                .httpBasic();
+                    .formLogin().loginPage("/auth/login").defaultSuccessUrl("/private/index",true).failureUrl("/auth/login?error=true")
+                    .loginProcessingUrl("/auth/login-post").permitAll()
+                .and()
+                    .logout().logoutUrl("/logout").logoutSuccessUrl("/");
     }
 }

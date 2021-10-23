@@ -1,6 +1,6 @@
 package edu.eci.arsw.transportari;
 
-import edu.eci.arsw.transportari.model.Usuario;
+import edu.eci.arsw.transportari.model.entity.Usuario;
 import edu.eci.arsw.transportari.repository.IUsuarioRepo;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,12 +25,11 @@ class TransportariApplicationTests {
 	@Test
 	public void crearUsuarioTest(){
 		Usuario us = new Usuario();
-		us.setIdUsuario(1);
-		us.setNombre("prueba1");
-		us.setApellido("test1");
-		us.setCorreo("prueba1@gmail.com");
-		us.setUsuario("prueba01");
-		us.setClave(encoder.encode("prueba1"));
+		us.setNombre("prueba2");
+		us.setApellido("test2");
+		us.setCorreo("prueba2@gmail.com");
+		us.setUsername("prueba02");
+		us.setClave(encoder.encode("prueba2"));
 
 		Usuario retorno = repo.save(us);
 		assertTrue(retorno.getClave().equalsIgnoreCase(us.getClave()));
