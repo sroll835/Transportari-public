@@ -19,22 +19,22 @@
                     <label for="reg-log"></label>
                     <div class="card-3d-wrap mx-auto">
                         <div class="card-3d-wrapper">
-                            <div th:if="${param.error}">Credenciales incorrectas</div>
                             <div class="card-front">
-                                <form th:action="@{/auth/login-post}" method="post">
-                                    <div class="center-wrap">
-                                        <div class="section text-center">
+                                <div class="center-wrap">
+                                    <div th:if="${param.error}">Credenciales incorrectas</div>
+                                    <div class="section text-center">
+                                        <form id="loginform" method="post" th:action="@{/auth/login-post}" role="form">
                                             <h4 class="mb-4 pb-3">Log In</h4>
                                             <div class="form-group">
                                                 <input type="text" name="username"
                                                        class="form-style"
                                                        placeholder="Usuario"
-                                                       id="logemail"
+                                                       id="logusername"
                                                        autocomplete="none">
                                                 <i class="input-icon uil uil-at"></i>
                                             </div>
                                             <div class="form-group mt-2">
-                                                <input type="password" name="clave"
+                                                <input type="password" name="password"
                                                        class="form-style"
                                                        placeholder="Clave"
                                                        id="logpass" autocomplete="none">
@@ -44,57 +44,57 @@
                                             <p class="mb-0 mt-4 text-center">
                                                 <a href="#0" class="link">Forgot your password?</a>
                                             </p>
-                                        </div>
+                                        </form>                                           
                                     </div>
-                                </form>
+                                </div>        
                             </div>
                             <div class="card-back">
-                                <form th:action="@{/auth/registro}" th:object="${usuario}" method="post">
-                                    <div class="center-wrap">
-                                        <div class="section text-center">
+                                <div class="center-wrap">
+                                    <div class="section text-center">
+                                        <form th:action="@{/auth/registro}" th:object="${usuario}" method="post">
                                             <h4 class="mb-4 pb-3">Sign Up</h4>
-                                            <div class="form-group">
-                                                <input type="text" name="nombre" th:field="*{nombre}"
-                                                       class="form-style"
-                                                       placeholder="Nombre"
-                                                       id="logname"
-                                                       autocomplete="none">
-                                                <i class="input-icon uil uil-user"></i>
-                                            </div>
-                                            <div class="form-group mt-2">
-                                                <input type="text" name="apellido" th:field="*{apellido}"
-                                                       class="form-style"
-                                                       placeholder="Apellido"
-                                                       id="logname"
-                                                       autocomplete="none">
-                                                <i class="input-icon uil uil-user"></i>
-                                            </div>
-                                            <div class="form-group mt-2">
-                                                <input type="email" name="correo" th:field="*{correo}"
-                                                       class="form-style"
-                                                       placeholder="Email"
-                                                       id="logemail" autocomplete="none">
-                                                <i class="input-icon uil uil-at"></i>
-                                            </div>
-                                            <div class="form-group mt-2">
-                                                <input type="text" name="username" th:field="*{username}"
-                                                       class="form-style"
-                                                       placeholder="Usuario"
-                                                       id="logname" autocomplete="none">
-                                                <i class="input-icon uil uil-at"></i>
-                                            </div>
-                                            <div class="form-group mt-2">
-                                                <input type="password" name="clave" th:field="*{clave}"
-                                                       class="form-style"
-                                                       placeholder="Clave"
-                                                       id="logpass"
-                                                       autocomplete="none">
-                                                <i class="input-icon uil uil-lock-alt"></i>
-                                            </div>
-                                            <button type="submit" class="btn mt-4">submit</button>
+                                        <div class="form-group">
+                                            <input type="text" name="nombre" th:field="*{nombre}"
+                                                   class="form-style"
+                                                   placeholder="Nombre"
+                                                   id="logname"
+                                                   autocomplete="none">
+                                            <i class="input-icon uil uil-user"></i>
                                         </div>
+                                        <div class="form-group mt-2">
+                                            <input type="text" name="apellido" th:field="*{apellido}"
+                                                   class="form-style"
+                                                   placeholder="Apellido"
+                                                   id="loglastname"
+                                                   autocomplete="none">
+                                            <i class="input-icon uil uil-user"></i>
+                                        </div>
+                                        <div class="form-group mt-2">
+                                            <input type="email" name="correo" th:field="*{correo}"
+                                                   class="form-style"
+                                                   placeholder="Email"
+                                                   id="logemail" autocomplete="none">
+                                            <i class="input-icon uil uil-at"></i>
+                                        </div>
+                                        <div class="form-group mt-2">
+                                            <input type="text" name="username" th:field="*{username}"
+                                                   class="form-style"
+                                                   placeholder="Usuario"
+                                                   id="logusername" autocomplete="none">
+                                            <i class="input-icon uil uil-at"></i>
+                                        </div>
+                                        <div class="form-group mt-2">
+                                            <input type="password" name="clave" th:field="*{clave}"
+                                                   class="form-style"
+                                                   placeholder="Clave"
+                                                   id="logpass"
+                                                   autocomplete="none">
+                                            <i class="input-icon uil uil-lock-alt"></i>
+                                        </div>
+                                        <button type="submit" class="btn mt-4">submit</button>
+                                        </form>                                        
                                     </div>
-                                </form>
+                                </div>
                             </div>
                         </div>
                     </div>

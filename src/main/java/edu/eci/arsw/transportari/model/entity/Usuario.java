@@ -1,10 +1,11 @@
 package edu.eci.arsw.transportari.model.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "usuarios")
-public class Usuario {
+public class Usuario implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,6 +17,7 @@ public class Usuario {
     private String clave;
 
     public Usuario(Long id, String nombre, String apellido, String correo, String username, String clave) {
+        super();
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
