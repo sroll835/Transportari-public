@@ -1,20 +1,27 @@
 package edu.eci.arsw.transportari.model.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "rutas")
 public class Ruta {
     private int idRuta;
     private String nombre;
     private String destino;
-    private String origen;
-    private String horario;
-    private Servicio servicio;
+    private int posicion;
+    private String parada;
+    private String servicio;
+    private String estacion;
 
-    public Ruta(int idRuta, String nombre, String destino, String origen, String horario, Servicio servicio) {
+    public Ruta(int idRuta,String nombre,String destino,int posicion,String parada,String servicio,String estacion) {
         this.idRuta = idRuta;
         this.nombre = nombre;
         this.destino = destino;
-        this.origen = origen;
-        this.horario = horario;
+        this.posicion = posicion;
+        this.parada = parada;
         this.servicio = servicio;
+        this.estacion = estacion;
     }
 
     public int getIdRuta() {
@@ -41,27 +48,9 @@ public class Ruta {
         this.destino = destino;
     }
 
-    public String getOrigen() {
-        return origen;
-    }
+    public String getServicio() { return servicio;}
 
-    public void setOrigen(String origen) {
-        this.origen = origen;
-    }
-
-    public String getHorario() {
-        return horario;
-    }
-
-    public void setHorario(String horario) {
-        this.horario = horario;
-    }
-
-    public Servicio getServicio() {
-        return servicio;
-    }
-
-    public void setServicio(Servicio servicio) {
+    public void setServicio(String servicio) {
         this.servicio = servicio;
     }
 }

@@ -1,5 +1,8 @@
 package edu.eci.arsw.transportari.model.entity;
 
+import javax.persistence.Table;
+
+
 public class Estacion {
     private String idEstacion;
     private String nombre;
